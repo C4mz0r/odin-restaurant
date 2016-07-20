@@ -1,12 +1,12 @@
-$(function(){
+$(function(){	
 	
+	// Draw the navigation links
 	drawTabs();
 	
+	// Register click events for the navigation links	
 	$("li").click(function(event) {		
 		loadContentForTab(this.textContent);		
 	});
-	
-	
 
 });
 
@@ -26,6 +26,8 @@ var drawTabs = function() {
 					  "</ul>");    
 }
 
+// Loads the content for the specified tabName
+// into the #loadingArea div
 var loadContentForTab = function(tabName) {
 	
 	$("#loadingArea").empty();
@@ -47,6 +49,8 @@ var loadContentForTab = function(tabName) {
 			$('#loadingArea').append(homePageHtml());			
 	}
 }
+
+// Page content
 
 var contactPageHtml = function() {
 	var contact = "<h1>The Chocolate Truffle</h1>";
