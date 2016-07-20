@@ -1,39 +1,51 @@
 $(function(){
 	
 	drawTabs();
-
-	$( "#tabs" ).tabs({
-      collapsible: true
-    });
 	
+	$("li").click(function(event) {		
+		loadContentForTab(this.textContent);		
+	});
+	
+	
+
 });
 
 var drawTabs = function() {
 	
 	// Container for tabs
 	$('#content').append("<div id='tabs'></div>");
+	
+	// Area where tab content will be loaded
+	$('#content').after("<div id='loadingArea'></div>");		
 		
 	// The tabs
 	$('#tabs').append("<ul>" +
-					  "<li><a href='#tabs-1'>Home</a></li>" +
-					  "<li><a href='#tabs-2'>Menu</a></li>" +
-					  "<li><a href='#tabs-3'>Contact</a></li>" +
-					  "</ul>");
+					  "<li>Home</li>" +
+					  "<li>Menu</li>" +
+					  "<li>Contact</li>" +
+					  "</ul>");    
+}
+
+var loadContentForTab = function(tabName) {
 	
-    // Content for first tab
-	$('#tabs').append(	"<div id='tabs-1'>" +
-						homePageHtml() +
-						"</div>");
-						
-	// Content for second tab
-	$('#tabs').append(	"<div id='tabs-2'>" +
-						menuPageHtml() +
-						"</div>");
-						
-	// Content for second tab
-	$('#tabs').append(	"<div id='tabs-3'>" +
-						contactPageHtml() +
-						"</div>");
+	$("#loadingArea").empty();
+
+    switch(tabName){
+    	case "Home":	    
+			$('#loadingArea').append(homePageHtml());
+			break;
+							
+		case "Menu":
+			$('#loadingArea').append(menuPageHtml());
+			break;
+							
+		case "Contact":
+			$('#loadingArea').append(contactPageHtml());
+			break;
+			
+		default:
+			$('#loadingArea').append(homePageHtml());			
+	}
 }
 
 var contactPageHtml = function() {
