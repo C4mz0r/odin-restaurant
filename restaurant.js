@@ -5,7 +5,9 @@ $(function(){
 	
 	// Register click events for the navigation links	
 	$("li").click(function(event) {		
-		loadContentForTab(this.textContent);		
+		loadContentForTab(this.textContent);
+		$("li").removeClass(); // remove selected from all
+		$(this).addClass('selected'); // add selected to the clicked li
 	});
 
 });
@@ -36,7 +38,7 @@ var loadContentForTab = function(tabName) {
     switch(tabName){
     	case "Home":	    
 			$('#loadingArea').append(homePageHtml());
-			$('#loadingArea').addClass('background-table');
+			$('#loadingArea').addClass('background-table');			
 			break;
 							
 		case "Menu":
