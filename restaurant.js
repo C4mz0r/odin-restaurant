@@ -2,6 +2,9 @@ $(function(){
 	
 	// Draw the navigation links
 	drawTabs();
+
+	// Display the home page on the first load
+	loadContentForTab("Home");
 	
 	// Register click events for the navigation links	
 	$("li").click(function(event) {		
@@ -9,6 +12,7 @@ $(function(){
 		$("li").removeClass(); // remove selected from all
 		$(this).addClass('selected'); // add selected to the clicked li
 	});
+	
 
 });
 
@@ -31,7 +35,7 @@ var drawTabs = function() {
 // Loads the content for the specified tabName
 // into the #loadingArea div
 var loadContentForTab = function(tabName) {
-	
+		
 	$("#loadingArea").empty();
 	$("#loadingArea").removeClass(); // removes background class
 
