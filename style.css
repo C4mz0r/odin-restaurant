@@ -1,5 +1,33 @@
+html,body,#loadingArea { height:100%; }
+
 li {	
 	display: inline;	
 }
 
+.writing {
+	background: white;
+	color: black;
+	opacity: 0.8;
+	border-radius: 10px;	
+	width: 50%;		
+	padding: 10px;
+	border: 1px solid black;
+}
 
+.background-food {
+	background-image: url('images/steak-house.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.background-table {
+	background-image: url('images/table-restaurant.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.background-street {
+	background-image: url('images/wet-street.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
