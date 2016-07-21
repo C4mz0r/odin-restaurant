@@ -4,22 +4,21 @@ html,body,#loadingArea {
 }
 
 ul {
-    list-style-type: none;    
-    overflow: hidden;
-    background-color: #0a0a0a;    
+	list-style-type: none;    
+	overflow: hidden;
+	background-color: #0a0a0a;    
 }
 
 li {
-    float: left;
-    padding: 20px;
-    color: white;
+	float: left;
+	padding: 20px;
+	color: white;
 }
 
 .selected {
 	border-top: 3px solid white;
 	border-left: 3px solid white;
-	border-right: 3px solid white;
-	
+	border-right: 3px solid white;	
 }
 
 .writing {	

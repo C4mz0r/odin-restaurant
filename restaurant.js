@@ -9,8 +9,7 @@ $(function(){
 	// Register click events for the navigation links	
 	$("li").click(function(event) {		
 		loadContentForTab(this.textContent);
-		$("li").removeClass(); // remove selected from all
-		$(this).addClass('selected'); // add selected to the clicked li
+		updateSelectedLink(this);		
 	});
 	
 
@@ -32,8 +31,10 @@ var drawTabs = function() {
 					  "</ul>");    
 }
 
-// Loads the content for the specified tabName
-// into the #loadingArea div
+/*
+ * Loads the content for the specified tabName
+ * into the #loadingArea div
+ */
 var loadContentForTab = function(tabName) {
 		
 	$("#loadingArea").empty();
@@ -60,6 +61,16 @@ var loadContentForTab = function(tabName) {
 			$('#loadingArea').addClass('background-table');			
 	}
 }
+
+/*
+ * Clears out classes associated with the list items
+ * and applies the selected class to the given list item 
+ */
+var updateSelectedLink = function(link) {
+	$("li").removeClass(); // remove selected from all
+	$(link).addClass('selected'); // add selected to the clicked li
+}
+
 
 // Page content
 
