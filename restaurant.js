@@ -24,11 +24,13 @@ var drawTabs = function() {
 	$('#content').after("<div id='loadingArea'></div>");		
 		
 	// The tabs
-	$('#tabs').append(	"<ul>" +
-						"<li>Home</li>" +
-						"<li>Menu</li>" +
-						"<li>Contact</li>" +
-						"</ul>");    
+	$('#tabs').append(	
+		"<ul>" +
+		"<li>Home</li>" +
+		"<li>Menu</li>" +
+		"<li>Contact</li>" +
+		"</ul>"
+	);    
 }
 
 /*
